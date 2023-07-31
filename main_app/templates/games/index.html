@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h1>Games Library</h1>
+
+{% for game in games %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ game.name }}</span>
+            <p>Genre: {{ game.genre }}</p>
+            <p>Release Date: {{ game.release_date }}</p>
+            {% if in_library is True %}
+                <p>In Library: Yes</p>
+            {% else %}
+                <p>In Library: No</p>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

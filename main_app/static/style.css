@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+flex: 1 0 auto;
+}
+
+footer.page-footer {
+text-align: center;
+padding-bottom: 10px;
+}
+
+.card-title {
+font-weight: bold;
+font-size: 5vmin;
+}
