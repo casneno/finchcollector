@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- if there is some kind of context (information from the model) being uploaded, then object=True -->
+{%if object %}
+    <h1>Edit <span class="teal-text">{{ object.name }}</span></h1> 
+    <!-- could also use {{ game.name }} -->
+{%else%}
+    <h1>Add Game</h1>
+{%endif%}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" class="btn">
+</form>
+
+{% endblock %}

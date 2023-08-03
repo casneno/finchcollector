@@ -7,28 +7,35 @@
     <title>Games Library</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-    <header class="navbar">
+    <header class="navbar-fixed ">
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper #311b92 deep-purple darken-4">
                 <ul>
-                    <li><a href="/">Games Library</a></li>
+                    <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Games Library</a></li>
                 </ul>
-                <ul class="menu">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/games">All Games</a></li>
+                <ul class="right">
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'players_create' %}">+ Player</a></li>
+                    <li><a href="{% url 'players_index' %}">View All Players</a></li>
+                    <li><a href="{% url 'games_create' %}">+ Game</a></li>
+                    <li><a href="{% url 'index' %}" class="allgamesbutton"><i class="material-icons">videogame_asset</i>All Games</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+
     <main>
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer">
+
+    <footer class="page-footer #311b92 deep-purple darken-4">
         <div>
-          All Rights Reserved, &copy; 2023 Games Collector
+          All Rights Reserved, &copy; 2023 Games Library
         </div>
       </footer>
 </body>

@@ -5,18 +5,20 @@
 <h1>Games Library</h1>
 
 {% for game in games %}
-    <div class="card">
-        <div class="card-content">
+<a href="{% url 'detail' game.id%}"><!-- <<<this helper funciton takes in the url's 'name' and then any arguments that relate to the urls, in order. In this example it associates 'game.id' to the reference '<int:cat_id>' seen in the urls.py -->
+    <div class="card-panel teal">
+        <div class="card-content white-text">
             <span class="card-title">{{ game.name }}</span>
             <p>Genre: {{ game.genre }}</p>
             <p>Release Date: {{ game.release_date }}</p>
-            {% if in_library is True %}
-                <p>In Library: Yes</p>
+            {% if game.in_library %}
+            <p>In Library: Yes</p>
             {% else %}
-                <p>In Library: No</p>
+            <p>In Library: No</p>
             {% endif %}
         </div>
     </div>
+</a>
 {% endfor %}
 
 {% endblock %}
